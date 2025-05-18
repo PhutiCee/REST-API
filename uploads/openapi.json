@@ -1,0 +1,420 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "PhutiCee APIs",
+      "description": "This is Swagger Documetation",
+      "version": "1.0.0",
+      "contact": {}
+    },
+    "servers": [
+      {
+        "url": "http://localhost:3000"
+      }
+    ],
+    "paths": {
+      "/api/v1/auth/register": {
+        "post": {
+          "summary": "Register User API",
+          "description": "",
+          "operationId": "postapiv1authregister",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "example": {}
+                  }
+                }
+              }
+            }
+          },
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "example": {
+                    "name": "User 8",
+                    "email": "user8@gmail.com",
+                    "password": "12345678",
+                    "gender": "male"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/v1/auth/login": {
+        "post": {
+          "summary": "Login User API",
+          "description": "",
+          "operationId": "postapiv1authlogin",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "example": {}
+                  }
+                }
+              }
+            }
+          },
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "example": {
+                    "email": "user8@gmail.com",
+                    "password": "12345678"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/v1/post/add-post": {
+        "post": {
+          "summary": "Add Post API",
+          "description": "",
+          "operationId": "postapiv1postaddpost",
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              },
+              "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGRmMGRhM2M1Mjc2MDgzZDY2ZmJmOCIsIm5hbWUiOiJVc2VyIDgiLCJlbWFpbCI6InVzZXI4QGdtYWlsLmNvbSIsImlhdCI6MTc0NTc0NDE1NiwiZXhwIjoxNzQ2MzQ4OTU2fQ.BUb1-AjnsWHNHppBzEHXuuKrRaOxaX5Q-Ev0sWCBTFc"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "example": {}
+                  }
+                }
+              }
+            }
+          },
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "example": "Sample Post 10"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "published"
+                    },
+                    "content": {
+                      "type": "string",
+                      "example": "This is sample post content of Post - 5"
+                    },
+                    "bannerImage": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/v1/auth/profile": {
+        "get": {
+          "summary": "User Profile API",
+          "description": "",
+          "operationId": "getapiv1authprofile",
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              },
+              "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGRmMGRhM2M1Mjc2MDgzZDY2ZmJmOCIsIm5hbWUiOiJVc2VyIDgiLCJlbWFpbCI6InVzZXI4QGdtYWlsLmNvbSIsImlhdCI6MTc0NTc0NDE1NiwiZXhwIjoxNzQ2MzQ4OTU2fQ.BUb1-AjnsWHNHppBzEHXuuKrRaOxaX5Q-Ev0sWCBTFc"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "example": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/v1/post/list-posts": {
+        "get": {
+          "summary": "List Posts API",
+          "description": "",
+          "operationId": "getapiv1postlistposts",
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              },
+              "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGRmMGRhM2M1Mjc2MDgzZDY2ZmJmOCIsIm5hbWUiOiJVc2VyIDgiLCJlbWFpbCI6InVzZXI4QGdtYWlsLmNvbSIsImlhdCI6MTc0NTc0NDE1NiwiZXhwIjoxNzQ2MzQ4OTU2fQ.BUb1-AjnsWHNHppBzEHXuuKrRaOxaX5Q-Ev0sWCBTFc"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "example": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/v1/post/update-post/680df14709eab7922467ad86": {
+        "put": {
+          "summary": "Update Post API",
+          "description": "",
+          "operationId": "putapiv1postupdatepost680df14709eab7922467ad86",
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              },
+              "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGRmMGRhM2M1Mjc2MDgzZDY2ZmJmOCIsIm5hbWUiOiJVc2VyIDgiLCJlbWFpbCI6InVzZXI4QGdtYWlsLmNvbSIsImlhdCI6MTc0NTc0NDE1NiwiZXhwIjoxNzQ2MzQ4OTU2fQ.BUb1-AjnsWHNHppBzEHXuuKrRaOxaX5Q-Ev0sWCBTFc"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "example": {}
+                  }
+                }
+              }
+            }
+          },
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "/api/v1/post/delete-post/680df14709eab7922467ad86": {
+        "delete": {
+          "summary": "Delete Post API",
+          "description": "",
+          "operationId": "deleteapiv1postdeletepost680df14709eab7922467ad86",
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              },
+              "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGRmMGRhM2M1Mjc2MDgzZDY2ZmJmOCIsIm5hbWUiOiJVc2VyIDgiLCJlbWFpbCI6InVzZXI4QGdtYWlsLmNvbSIsImlhdCI6MTc0NTc0NDE1NiwiZXhwIjoxNzQ2MzQ4OTU2fQ.BUb1-AjnsWHNHppBzEHXuuKrRaOxaX5Q-Ev0sWCBTFc"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "example": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/v1/post/680e272563e9b1f786f69e6f": {
+        "get": {
+          "summary": "Single Post API",
+          "description": "",
+          "operationId": "getapiv1post680e272563e9b1f786f69e6f",
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              },
+              "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGRmMGRhM2M1Mjc2MDgzZDY2ZmJmOCIsIm5hbWUiOiJVc2VyIDgiLCJlbWFpbCI6InVzZXI4QGdtYWlsLmNvbSIsImlhdCI6MTc0NTc0NDE1NiwiZXhwIjoxNzQ2MzQ4OTU2fQ.BUb1-AjnsWHNHppBzEHXuuKrRaOxaX5Q-Ev0sWCBTFc"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "example": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/": {
+        "get": {
+          "summary": "User Logout API",
+          "description": "",
+          "operationId": "get",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "example": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/v1/male-users": {
+        "get": {
+          "summary": "List Male Users",
+          "description": "",
+          "operationId": "getapiv1maleusers",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "example": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/v1/filtered-email": {
+        "get": {
+          "summary": "Get Users by Email Pattern",
+          "description": "",
+          "operationId": "getapiv1filteredemail",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "example": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/v1/user-substring": {
+        "get": {
+          "summary": "Get Users Having a Substring",
+          "description": "",
+          "operationId": "getapiv1usersubstring",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "example": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/v1/all-posts-with-user": {
+        "get": {
+          "summary": "List Posts with User Info",
+          "description": "",
+          "operationId": "getapiv1allpostswithuser",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "example": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {},
+      "securitySchemes": {
+        "basicAuth": {
+          "type": "http",
+          "scheme": "basic"
+        },
+        "digestAuth": {
+          "type": "http",
+          "scheme": "digest"
+        }
+      }
+    },
+    "tags": []
+  }

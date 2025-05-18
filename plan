@@ -1,0 +1,12 @@
+/routes - auth.route.js - Register.js (POST) - Login.js (POST) - Profile.js (GET) --> token will be needed - Logout (GET) --> token will be needed
+
+    - post.route.js
+        - Add post (POST) --> token will be needed
+        - List Post (GET) --> token will be needed
+        - Update Post (PUT) --> token will be needed
+        - Delete Post (DELETE) --> token will be needed
+
+/controllers
+-auth.controller.js - post.controller.js
+
+/models - user.model.js [ name, email, password, gender ] - post.model.js [ title, content, status, userId ]
