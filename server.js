@@ -35,7 +35,17 @@ app.use("/api/v1", dataRouter);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerAPIOptions));
 
 app.use("/", (req, res) => {
-    res.send("-- PhutiCee Apis :)")
+    res.send(`
+        <h1>👀 You're not supposed to be here...</h1>
+        <p>This isn't the endpoint you're looking for.</p>
+        <p>But since you're here... enjoy the silence.</p>
+        <pre>
+            system status: STABLE
+            access level: [REDACTED]
+            trace: false
+        </pre>
+        <p><em>“Curiosity is rewarded... sometimes.”</em></p>
+    `);
 })
 
 mongoose.connect(process.env.MONGODB_URI)
